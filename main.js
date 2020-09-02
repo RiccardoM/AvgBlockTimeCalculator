@@ -36,7 +36,7 @@ client.subscribe({
         let sum = 0;
         let prevdate = null;
 
-        for (let i = 0; i < timestamps.length; i++ ) {
+        for (let i = 0, length = timestamps.length; i < length; i++ ) {
             const timestamp = timestamps[i];
             const curDate = moment(timestamp, "YYYY-MM-DDTHH:mm:ss.SSSZ");
             if(prevdate) {
