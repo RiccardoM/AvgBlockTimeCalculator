@@ -36,14 +36,15 @@ client.subscribe({
         let sum = 0;
         let prevdate = null;
 
-        timestamps.forEach((timestamp) => {
+        for (let i = 0; i < timestamps.length; i++ ) {
+            const timestamp = timestamps[i];
             const curDate = moment(timestamp, "YYYY-MM-DDTHH:mm:ss.SSSZ");
             if(prevdate) {
                 const diff = curDate.diff(prevdate);
                 sum += diff;
             }
             prevdate = curDate;
-        });
+        }
 
         const avg = (sum / (timestamps.length - 1));
         console.log(avg / 1000);
